@@ -1,0 +1,79 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld 해먹" : {
+
+    },
+    "chopstics" : {
+
+    },
+    "fork & knife" : {
+
+    },
+    "hand food" : {
+
+    },
+    "input_reference_placeholder" : {
+
+    },
+    "input_title_placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "please input title"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "제목을 입력해 주세요."
+          }
+        }
+      }
+    },
+    "New mails you receive will appear here." : {
+
+    },
+    "No Mail" : {
+
+    },
+    "spoon" : {
+
+    },
+    "title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "title"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "제목"
+          }
+        }
+      }
+    },
+    "내용을 자유롭게 입력하세요." : {
+
+    },
+    "메모" : {
+
+    },
+    "새로 만들기" : {
+
+    },
+    "저장됨" : {
+
+    },
+    "저장하기" : {
+
+    }
+  },
+  "version" : "1.0"
+}
