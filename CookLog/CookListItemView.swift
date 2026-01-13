@@ -50,13 +50,24 @@ struct CookListItemView: View {
 //            .background(.red)
                 
         } label: {
-            Text("\(cook.count) 해먹")
-                .font(Font.caption)
-                .padding(8)
-                .background {
-                    RoundedRectangle(cornerRadius: 8)
-                        .foregroundStyle(.yellow)
+            HStack {
+                if cook.isNew {
+                    Text("NEW")
+                        .font(Font.caption)
+                        .padding(8)
+                        .background {
+                            RoundedRectangle(cornerRadius: 8)
+                                .foregroundStyle(.red)
+                        }
                 }
+                Text("\(cook.count) 해먹")
+                    .font(Font.caption)
+                    .padding(8)
+                    .background {
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundStyle(.yellow)
+                    }
+            }
             VStack {
                 Text(cook.title)
                     .font(Font.headline)
