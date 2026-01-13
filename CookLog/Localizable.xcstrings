@@ -4,15 +4,6 @@
     "%lld 해먹" : {
 
     },
-    "chopstics" : {
-
-    },
-    "fork & knife" : {
-
-    },
-    "hand food" : {
-
-    },
     "input_reference_placeholder" : {
 
     },
@@ -33,13 +24,13 @@
         }
       }
     },
+    "NEW" : {
+
+    },
     "New mails you receive will appear here." : {
 
     },
     "No Mail" : {
-
-    },
-    "spoon" : {
 
     },
     "title" : {
@@ -68,10 +59,13 @@
     "새로 만들기" : {
 
     },
-    "저장됨" : {
+    "저장하기" : {
 
     },
-    "저장하기" : {
+    "편집" : {
+
+    },
+    "해먹기록" : {
 
     }
   },

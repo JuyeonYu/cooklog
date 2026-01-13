@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CreateCookView: View {
 //    @Binding var didSave: Bool
-    @Binding var newCook: Cook?
+    var cook: Cook?
+    
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
@@ -22,6 +23,17 @@ struct CreateCookView: View {
     @State private var selectedCategory: Int = 0
     
     let images: [String] = ["circle"]
+    
+    init(cook: Cook? = nil) {
+        self.cook = cook
+        if let cook {
+            self.title = cook.title
+            self.reference = cook.reference?.absoluteString ?? ""
+            self.desc = cook.desc ?? ""
+            self.selectedCategory = cook.category
+            
+        }
+    }
     
     
     var body: some View {
@@ -79,14 +91,14 @@ struct CreateCookView: View {
                     Text("메모")
                 }
             }
-            .onChange(of: desc) { _ in
+            .onChange(of: desc) { (_, _) in
                 if isDescFocused {
                     withAnimation {
                         proxy.scrollTo("descEditor", anchor: .bottom)
                     }
                 }
             }
-            .onChange(of: isDescFocused) { focused in
+            .onChange(of: isDescFocused) { (_, focused) in
                 if focused {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         withAnimation {
@@ -99,9 +111,19 @@ struct CreateCookView: View {
         .safeAreaInset(edge: .bottom) {
             
             Button {
-                newCook = Cook(isNew: true, title: title, desc: desc, category: selectedCategory, reference: URL(string: reference))
-                guard let newCook else { return }
-                modelContext.insert(newCook)
+                if let cook {
+                    cook.title = title
+                    cook.desc = desc
+                    cook.category = selectedCategory
+                    cook.reference = URL(string: reference)
+                } else {
+                    let newCook = Cook(isNew: true, title: title, desc: desc, category: selectedCategory, reference: URL(string: reference))
+//                    guard let newCook else { return }
+                    modelContext.insert(newCook)
+                }
+                
+//                guard let newCook else { return }
+                
 //                didSave = true
                 dismiss()
             } label: {
@@ -115,6 +137,6 @@ struct CreateCookView: View {
     }
 }
 
-#Preview {
-    CreateCookView(newCook: .constant(nil))
-}
+//#Preview {
+//    CreateCookView(newCook: .constant(nil))
+//}
